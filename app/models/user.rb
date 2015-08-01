@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+	acts_as_voter
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -25,5 +27,10 @@ class User < ActiveRecord::Base
 		end
 
 		tmp_tags
+	end
+
+	def toggle_heart(treasure)
+		(self.voted_for? treasure) ? self.unlike(treasure) : self.likes(treasure)
+
 	end
 end

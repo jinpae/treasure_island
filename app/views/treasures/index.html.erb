@@ -1,1 +1,5 @@
+<% if params[:tag] %>
+	<h1>Displaying results for <%= content_tag :span, params[:tag] %></h1>
+<% end %>
+
 <%= render @treasures %>

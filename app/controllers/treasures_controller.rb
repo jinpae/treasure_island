@@ -43,6 +43,11 @@ class TreasuresController < ApplicationController
 		redirect_to root_path, notice: "Treasure deleted successfully."
 	end
 
+	def heart
+		current_user.toggle_heart(@treasure)
+		redirect_to :back
+	end
+
 	private
 		def treasure_params
 			params.require(:treasure).permit(:name, :url, :description, :tag_list)
