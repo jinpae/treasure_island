@@ -39,6 +39,8 @@ class TreasuresController < ApplicationController
 	end
 
 	def destroy
+		@treasure.destroy
+		redirect_to root_path, notice: "Treasure deleted successfully."
 	end
 
 	private

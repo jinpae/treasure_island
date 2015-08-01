@@ -1,4 +1,6 @@
-<h3 class="treasure-name"><%= link_to treasure.name, treasure %></h3>
-<p class="treasure-url"><%= treasure.url %></p>
-<p class="treasure-description"><%= treasure.description %></p>
-<p class="treasure-tag-list"><%= tag_link_to treasure %></p>
+<h3 class="name"><%= link_to treasure.name, treasure %></h3>
+<p class="url"><%= treasure.url %></p>
+<p class="btn-edit"><%= link_to "Edit", edit_treasure_path(treasure) %></p>
+<p class="btn-delete"><%= link_to "Delete", treasure, method: :delete, data: { confirm: "Are you sure?" } %></p>
+<p class="description"><%= treasure.description %></p>
+<p class="tag-list"><%= tag_link_to treasure %></p>
