@@ -2,11 +2,18 @@ class TreasuresController < ApplicationController
 	before_action :authenticate_user!, except: [:index, :show]
 	before_action :set_treasure, except: [:index, :new, :create, :autocomplete_tags]
 
+	# TODO: Need to clean this a bit...
 	def index
-		if params[:tag]
-			@treasures = Treasure.tagged_with(params[:tag])
+		if params[:q]
+			@q = Treasure.search(params[:q].try(:merge, m: 'or').merge(tags_name_cont: params[:q].values[0]))
 		else
-			@treasures = Treasure.all
+			@q = Treasure.search(params[:q])
+		end
+
+		if params[:tag]
+			@treasures = Treasure.tagged_with(params[:tag]).order(:name).paginate(page: params[:page])
+		else
+			@treasures = @q.result(distinct: true).order(:name).paginate(page: params[:page])
 		end
 	end
 
