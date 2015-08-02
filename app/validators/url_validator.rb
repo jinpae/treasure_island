@@ -15,7 +15,7 @@ class UrlValidator < ActiveModel::EachValidator
 	
 			has_duplicate_url = find_by_url(https_url) || find_by_url(http_url)
 	
-			has_duplicate_url ? record == (find_by_url(https_url) || find_by_url(http_url)) : false
+			has_duplicate_url ? record == (find_by_url(https_url) || find_by_url(http_url)) : true
 		end
 	
 		def find_by_url(url)

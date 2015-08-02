@@ -5,6 +5,10 @@ Rails.application.routes.draw do
 		member do
 			patch :heart
 		end
+
+		collection do
+			get :autocomplete_tags
+		end
 	end
 
   devise_for :users

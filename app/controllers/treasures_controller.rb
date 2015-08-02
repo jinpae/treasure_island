@@ -1,6 +1,6 @@
 class TreasuresController < ApplicationController
 	before_action :authenticate_user!, except: [:index, :show]
-	before_action :set_treasure, except: [:index, :new, :create]
+	before_action :set_treasure, except: [:index, :new, :create, :autocomplete_tags]
 
 	def index
 		if params[:tag]
@@ -46,6 +46,17 @@ class TreasuresController < ApplicationController
 	def heart
 		current_user.toggle_heart(@treasure)
 		redirect_to :back
+	end
+
+	# TODO: Clean up and refactor the code.
+	def autocomplete_tags
+		@tags = ActsAsTaggableOn::Tag.where("name LIKE ?", "#{params[:q]}%").order(:name)
+
+		respond_to do |format|
+			format.json do
+				render json: @tags.collect { |t| { id: t.name, name: t.name } }
+			end
+		end
 	end
 
 	private

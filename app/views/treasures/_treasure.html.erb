@@ -5,8 +5,9 @@
 <p class="btn-delete"><%= link_to "Delete", treasure, method: :delete, data: { confirm: "Are you sure?" } %></p>
 
 <div class="heart-wrapper">
-	<%= link_to "Heart", heart_treasure_path(treasure), method: :patch, class: "btn-heart" %>
-	<%= content_tag :span, treasure.get_likes.size, class: "heart-count" %>
+	<%= content_tag :p do %>
+		Heart <%= content_tag :span, treasure.get_likes.size, class: "heart-count" %>
+	<% end %>
 </div>
 
 <p class="description"><%= treasure.description %></p>

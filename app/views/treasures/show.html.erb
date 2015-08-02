@@ -3,3 +3,9 @@
 <p class="treasure-url"><%= link_to @treasure.url, @treasure.url, target: "_blank" %></p>
 <p class="treasure-description"><%= @treasure.description %></p>
 <p class="treasure-tag-list"><%= tag_link_to @treasure %></p>
+
+<div class="heart-wrapper">
+	<%= link_to "Heart", heart_treasure_path(@treasure), method: :patch, class: "btn-heart" %>
+	<%= content_tag :span, @treasure.get_likes.size, class: "heart-count" %>
+</div>
+

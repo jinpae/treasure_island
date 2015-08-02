@@ -1,0 +1,19 @@
+.select2-container,
+.select2-container-multi,
+.tag-select {
+	ul.select2-choices {
+		li.select2-search-field {
+			input {
+			}
+		}
+	}
+}
+
+.select2-drop,
+.select2-drop-multi {
+	.select2-results {
+		.select2-no-results {
+			display: none;
+		}
+	}
+}

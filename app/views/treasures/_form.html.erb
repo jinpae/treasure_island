@@ -18,7 +18,8 @@
 
 	<div class="field">
 		<%= f.label :tag_list, "Tags (separated by commas)" %><br>
-		<%= f.text_field :tag_list, value: @treasure.tag_list.to_s %>
+		<%= f.text_field :tag_list, value: @treasure.tag_list.to_s,
+			data: { saved: f.object.tags.map { |t| { id: t.name, name: t.name } }.to_json, url: autocomplete_tags_treasures_path }, class: "tag-select" %>
 	</div>
 
 	<%= f.submit "Submit" %>
