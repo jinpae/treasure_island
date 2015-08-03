@@ -33,4 +33,12 @@ class User < ActiveRecord::Base
 		(self.voted_for? treasure) ? self.unlike(treasure) : self.likes(treasure)
 
 	end
+
+	def gravatar_id
+		Digest::MD5::hexdigest(email.downcase)
+	end
+
+	def full_name
+		"#{first_name} #{last_name}"
+	end
 end

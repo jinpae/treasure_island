@@ -13,5 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require select2
+//= require local_time
 //= require turbolinks
 //= require_tree .
