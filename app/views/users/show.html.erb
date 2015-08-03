@@ -1,0 +1,21 @@
+<div class="gravatar">
+	<%= profile_image_for @user %>
+</div>
+
+<div class="user-info">
+	<h2>
+		<%= @user.full_name %>
+	</h2>
+	<p>
+		<%= @user.email %>
+	</p>
+</div>
+
+<div class="count-wrapper">
+	<p>Total Treasures</p>
+	<p class="treasure-count"><%= @user.treasure_count %></p>
+</div>
+
+<h2 class="title">Submitted Treasures</h2>
+
+<%= render @owned_treasures %>

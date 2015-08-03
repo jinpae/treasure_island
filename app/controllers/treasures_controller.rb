@@ -32,6 +32,9 @@ class TreasuresController < ApplicationController
 	end
 
 	def show
+		if request.path != treasure_path(@treasure)
+			redirect_to @treasure, status: :moved_permanently
+		end
 	end
 
 	def edit
@@ -72,6 +75,6 @@ class TreasuresController < ApplicationController
 		end
 
 		def set_treasure
-			@treasure = Treasure.find(params[:id])
+			@treasure = Treasure.friendly.find(params[:id])
 		end
 end

@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+	extend FriendlyId
+
 	acts_as_voter
 
   # Include default devise modules. Others available are:
@@ -6,11 +8,20 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-	validates :first_name, presence: true
-	validates :last_name, presence: true
+	validates :first_name, :last_name, :username, presence: true
+	validates :username,
+						length: { minimum: 3 },
+						format: /\A[A-Z0-9]+[-_]*[A-Z0-9]+\z/i,
+						uniqueness: { case_sensitive: false }
 
 	has_many :treasures
 	has_many :tags, through: :treasures
+
+	friendly_id :username
+	
+	def should_generate_new_friendly_id?
+		slug.blank? || username_changed?
+	end
 
 	# Returns tags with single user's taggings counts via association.
 	def tag_counts
@@ -40,5 +51,9 @@ class User < ActiveRecord::Base
 
 	def full_name
 		"#{first_name} #{last_name}"
+	end
+
+	def treasure_count
+		treasures.size
 	end
 end
