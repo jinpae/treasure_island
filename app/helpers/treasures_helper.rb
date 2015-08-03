@@ -13,9 +13,15 @@ module TreasuresHelper
 		search_keyword = params[:q]
 
 		if tag || (search_keyword && search_keyword.values[0].present?)
-			content_tag :h1, class: "page-title" do
-				"Displaying results for #{content_tag :span, (tag || search_keyword.values[0])}".html_safe
-			end
+			title = "Displaying results for #{content_tag :span, (tag || search_keyword.values[0])}".html_safe
+		else
+			title = "Listing #{pluralize Treasure.count, "treasure"}"
 		end
+
+		content_tag :h1, title, class: "page-title"
+	end
+
+	def letters
+		@letters ||= Treasure.letter_indices
 	end
 end

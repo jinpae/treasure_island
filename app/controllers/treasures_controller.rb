@@ -12,6 +12,8 @@ class TreasuresController < ApplicationController
 
 		if params[:tag]
 			@treasures = Treasure.tagged_with(params[:tag]).order(:name).paginate(page: params[:page])
+		elsif params[:letter]
+			@treasures = Treasure.by_letter(params[:letter]).order(:name).paginate(page: params[:page])
 		else
 			@treasures = @q.result(distinct: true).order(:name).paginate(page: params[:page])
 		end
