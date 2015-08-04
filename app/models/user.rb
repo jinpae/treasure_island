@@ -53,11 +53,15 @@ class User < ActiveRecord::Base
 		"#{first_name} #{last_name}"
 	end
 
-	def treasure_count
-		treasures.size
+	def hearted_treasures
+		find_liked_items
 	end
 
 	def has_treasures?
 		treasures.count > 0
+	end
+
+	def has_hearted_treasures?
+		hearted_treasures.size > 0
 	end
 end

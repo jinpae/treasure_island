@@ -14,4 +14,12 @@ module UsersHelper
 			content_tag :p, "There are no treasures submitted by #{user.first_name} yet."
 		end
 	end
+
+	def hearted_treasures_for(user)
+		if user.has_hearted_treasures?
+			render @hearted_treasures
+		else
+			content_tag :p, "There are no hearted treasures by #{user.first_name} yet."
+		end
+	end
 end

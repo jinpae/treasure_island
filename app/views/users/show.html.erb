@@ -13,10 +13,9 @@
 
 <div class="count-wrapper">
 	<p>Total Treasures</p>
-	<p class="treasure-count"><%= @user.treasure_count %></p>
+	<p class="treasures-count"><%= @user.treasures.count %></p>
 </div>
 
-<!-- TODO: move this to dashboard page -->
 <div class="tag-cloud">
 	<% tag_cloud @user.tags_with_user_tag_counts, %w(xs s m l xl) do |tag, css_class| %>
 		<%= link_to tag.name, tag_path(tag.name), class: css_class %>

@@ -1,0 +1,23 @@
+<div class="gravatar">
+	<%= profile_image_for @user %>
+</div>
+
+<div class="user-info">
+	<h2>
+		<%= @user.full_name %>
+	</h2>
+	<p>
+		<%= @user.email %>
+	</p>
+</div>
+
+<div class="count-wrapper">
+	<p>Total Hearted Treasures</p>
+	<p class="treasure-count"><%= @user.hearted_treasures.count %></p>
+</div>
+
+<h2 class="title">Hearted Treasures</h2>
+
+<%= hearted_treasures_for @user %>
+
+<%= will_paginate @hearted_treasures %>
