@@ -56,4 +56,8 @@ class User < ActiveRecord::Base
 	def treasure_count
 		treasures.size
 	end
+
+	def has_treasures?
+		treasures.count > 0
+	end
 end
