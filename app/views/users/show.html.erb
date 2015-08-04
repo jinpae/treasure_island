@@ -16,6 +16,13 @@
 	<p class="treasure-count"><%= @user.treasure_count %></p>
 </div>
 
+<!-- TODO: move this to dashboard page -->
+<div class="tag-cloud">
+	<% tag_cloud @user.tags_with_user_tag_counts, %w(xs s m l xl) do |tag, css_class| %>
+		<%= link_to tag.name, tag_path(tag.name), class: css_class %>
+	<% end %>
+</div>
+
 <h2 class="title">Submitted Treasures</h2>
 
 <%= submitted_treasures_for @user %>
