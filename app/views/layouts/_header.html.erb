@@ -1,0 +1,28 @@
+<header role="banner">
+	<div class="container">
+		<div class="logo">
+			<%= render "layouts/logo" %>
+		</div>
+
+		<%= link_to "Treasure Island", root_path, class: "navbar-brand" %>
+
+		<%= link_to "#", class: "navbar-toggle" do %>
+			<%= content_tag :i, nil, class: "fa fa-bars" %>
+		<% end %>
+
+		<nav>
+			<ul>
+				<% if user_signed_in? %>
+					<li><%= link_to "New Treasure", new_treasure_path %></li>
+					<li><%= link_to "Treasures", treasures_path %></li>
+					<li><%= link_to "Profile", current_user %></li>
+					<li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+				<% else %>
+					<li><%= link_to "Treasures", treasures_path %></li>
+					<li><%= link_to "Sign Up", new_user_registration_path %></li>
+					<li><%= link_to "Sign In", new_user_session_path %></li>
+				<% end %>
+			</ul>
+		</nav>
+	</div>
+</header>

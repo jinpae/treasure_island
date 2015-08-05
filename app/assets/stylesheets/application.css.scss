@@ -19,6 +19,7 @@
 @import 'normalize';
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
+@import 'colors';
 @import 'tags';
 
 html {
@@ -28,9 +29,124 @@ html {
 }
 
 body {
-	font-family: 'Fira Sans', sans-serif;
+	font-family: 'Open Sans', $helvetica;
+	color: $default-text;
 }
 
 a {
 	color: inherit;
+}
+
+.container {
+	margin: 0 auto;
+	padding: 0 30px;
+
+	@media only screen and (min-width: 768px) {
+		width: 750px;
+	}
+
+	@media only screen and (min-width: 992px) {
+		width: 970px;
+	}
+
+	@media only screen and (min-width: 1230px) {
+		width: 1170px;
+	}
+}
+
+
+/*
+  ========================================
+	PLACEHOLDER
+  ========================================
+*/
+%clearfix {
+	zoom: 1;
+
+	&:before,
+	&:after {
+		display: table;
+		content: "";
+	}
+
+	&:after {
+		clear: both;
+	}
+}
+
+/*
+  ========================================
+	HEADER
+  ========================================
+*/
+header {
+	@extend %clearfix;
+	padding: 1rem 0;
+	text-transform: uppercase;
+	background: $primary;
+
+	a {
+		text-decoration: none;
+	}
+
+	.logo {
+		@include size(36px);
+		float: left;
+
+		svg {
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	.navbar-brand {
+		float: left;
+		font-weight: 700;
+		font-size: 1.3rem;
+		margin-left: 10px;
+		line-height: 36px;
+		letter-spacing: -2px;
+	}
+
+	ul {
+		float: right;
+		list-style: none;
+		display: inline-block;
+		margin: 0;
+		padding: 0;
+
+		li {
+			display: inline-block;
+			margin-left: 1em;
+			line-height: 36px;
+			font-weight: 400;
+			font-size: 15px;
+			letter-spacing: -.03em;
+		}
+	}
+
+	.navbar-toggle {
+		float: right;
+		display: none;
+	}
+}
+
+/*
+  ========================================
+	MAIN
+  ========================================
+*/
+main {
+	background: $primary;
+
+	.lead-wrapper {
+		text-align: center;
+		padding: 3rem 0;
+	}
+
+	.lead {
+		font-size: 3.3rem;
+		margin: 0;
+		letter-spacing: -.02em;
+	}
 }
