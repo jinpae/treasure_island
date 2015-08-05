@@ -15,4 +15,22 @@
  *= require_self
  */
 
-@import "tags";
+@import 'bourbon';
+@import 'normalize';
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
+@import 'tags';
+
+html {
+	height: 100vh;
+	height: 100%;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Fira Sans', sans-serif;
+}
+
+a {
+	color: inherit;
+}
