@@ -10,8 +10,7 @@
 <p class="tag-list"><%= tag_link_to @treasure %></p>
 
 <div class="heart-wrapper">
-	<%= link_to "Heart", heart_treasure_path(@treasure), method: :patch, class: "btn-heart" %>
-	<%= content_tag :span, @treasure.get_likes.size, class: "heart-count" %>
+	<%= render 'heart_link', treasure: @treasure, css_class: current_user.hearted?(@treasure) ? 'hearted' : nil %>
 </div>
 
 <%= link_to "&larr; Back to the list".html_safe, treasures_path %>

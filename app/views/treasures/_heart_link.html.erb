@@ -1,0 +1,2 @@
+<%= link_to "Heart", heart_treasure_path(treasure), method: :patch, class: css_class, remote: true %>
+<%= content_tag :span, treasure.get_likes.size, class: "heart-count" %>

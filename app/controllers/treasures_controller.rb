@@ -57,7 +57,11 @@ class TreasuresController < ApplicationController
 
 	def heart
 		current_user.toggle_heart(@treasure)
-		redirect_to :back
+
+		respond_to do |format|
+			format.html { redirect_to :back }
+			format.js
+		end
 	end
 
 	# TODO: Clean up and refactor the code.

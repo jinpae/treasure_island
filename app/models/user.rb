@@ -41,7 +41,7 @@ class User < ActiveRecord::Base
 	end
 
 	def toggle_heart(treasure)
-		(self.voted_for? treasure) ? self.unlike(treasure) : self.likes(treasure)
+		(self.hearted? treasure) ? self.unlike(treasure) : self.likes(treasure)
 
 	end
 
@@ -63,5 +63,9 @@ class User < ActiveRecord::Base
 
 	def has_hearted_treasures?
 		hearted_treasures.size > 0
+	end
+
+	def hearted?(treasure)
+		voted_for? treasure
 	end
 end
