@@ -17,6 +17,8 @@ class Treasure < ActiveRecord::Base
 
 	scope :by_letter, ->(letter) { where("treasures.name like ?", "#{letter}%") }
 	scope :letter_indices, -> { find_by_sql("SELECT DISTINCT SUBSTR(name, 1, 1) AS name FROM treasures ORDER BY name") }
+	scope :recent, -> (n = 5) { order(created_at: :desc).limit(n) }
+	scope :popular, -> (n = 5) { order(cached_votes_up: :desc).limit(n) }
 
 	def self.letter_indices
 		@treasures_with_first_letter ||= find_by_sql("SELECT DISTINCT SUBSTR(name, 1, 1) AS name FROM treasures ORDER BY name")
@@ -27,5 +29,9 @@ class Treasure < ActiveRecord::Base
 
 	def should_generate_new_friendly_id?
 		slug.blank? || name_changed?
+	end
+
+	def self.treasure_count
+		@count ||= Treasure.count
 	end
 end
