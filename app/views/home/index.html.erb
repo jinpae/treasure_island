@@ -1,7 +1,16 @@
 <main role="main" id="hero">
 	<div class="container">
 		<div class="lead-wrapper">
-			<h1 class="lead">Find and Share Awesome Sites<br>with Tools and Resources</h1>
+			<h1 class="lead">Find and share awesome sites<br>with tools and resources</h1>
+		</div>
+
+		<%= render "shared/search_form", q: @q, css_class: "hero-search-form", placeholder: "Search treasures" %>
+
+		<div class="treasures-found">
+			<p>
+				<span><%= Treasure.count %></span><br>
+				Treasures found
+			</p>
 		</div>
 	</div>
 </main>

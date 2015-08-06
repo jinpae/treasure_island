@@ -1,0 +1,54 @@
+@import 'colors';
+
+/*
+  ========================================
+	MAIN
+  ========================================
+*/
+main {
+	background: $primary;
+	padding: 2rem 0 2.5rem 0;
+
+	.lead-wrapper {
+		text-align: center;
+		margin-bottom: 2.5rem;
+	}
+
+	.lead {
+		font-size: 3.3rem;
+		margin: 0;
+		letter-spacing: -.02em;
+		line-height: 1.2;
+	}
+
+	.hero-search-form {
+		max-width: 700px;
+		margin: 0 auto;
+
+		input[type="search"] {
+			width: 100%;
+			padding: .55rem .6rem;
+			border-radius: 4px;
+			box-sizing: inherit;
+			outline: inherit;
+			box-shadow: 0 0 0px 6px rgba(128, 128, 128, 0.1);
+			border: inherit;
+		}
+	}
+
+	.treasures-found {
+		text-align: center;
+		margin-top: 2.2rem;
+
+		span {
+			font-weight: 700;
+			font-size: 2rem;
+		}
+
+		p {
+			font-size: .8rem;
+			text-transform: uppercase;
+			letter-spacing: -.04em;
+		}
+	}
+}

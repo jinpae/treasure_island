@@ -10,7 +10,7 @@
 <p class="tag-list"><%= tag_link_to @treasure %></p>
 
 <div class="heart-wrapper">
-	<%= render 'heart_link', treasure: @treasure, css_class: current_user.hearted?(@treasure) ? 'hearted' : nil %>
+	<%= render 'heart_link', treasure: @treasure, css_class: heart_link_css %>
 </div>
 
 <%= link_to "&larr; Back to the list".html_safe, treasures_path %>

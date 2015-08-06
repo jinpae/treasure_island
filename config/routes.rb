@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 	resources :treasures do
 		member do
 			patch :heart
+			get :heart
 		end
 
 		collection do

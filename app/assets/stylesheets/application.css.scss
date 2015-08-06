@@ -10,7 +10,6 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
  *= require select2
  *= require_self
  */
@@ -21,11 +20,16 @@
 @import 'font-awesome';
 @import 'colors';
 @import 'tags';
+@import 'home';
 
 html {
 	height: 100vh;
 	height: 100%;
 	box-sizing: border-box;
+}
+
+* {
+	box-sizing: inherit;
 }
 
 body {
@@ -53,7 +57,6 @@ a {
 		width: 1170px;
 	}
 }
-
 
 /*
   ========================================
@@ -128,25 +131,5 @@ header {
 	.navbar-toggle {
 		float: right;
 		display: none;
-	}
-}
-
-/*
-  ========================================
-	MAIN
-  ========================================
-*/
-main {
-	background: $primary;
-
-	.lead-wrapper {
-		text-align: center;
-		padding: 3rem 0;
-	}
-
-	.lead {
-		font-size: 3.3rem;
-		margin: 0;
-		letter-spacing: -.02em;
 	}
 }

@@ -1,4 +1,4 @@
-$('.heart-wrapper').html("<%= j render 'heart_link', treasure: @treasure, css_class: nil %>");
+$('.heart-wrapper').html("<%= j render 'heart_link', treasure: @treasure %>");
 
 // add 'hearted' css class if user has hearted the treasure
 <% if current_user.hearted?(@treasure) %>

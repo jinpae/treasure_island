@@ -59,7 +59,7 @@ class TreasuresController < ApplicationController
 		current_user.toggle_heart(@treasure)
 
 		respond_to do |format|
-			format.html { redirect_to :back }
+			format.html { redirect_to @treasure }
 			format.js
 		end
 	end

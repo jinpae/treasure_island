@@ -24,4 +24,10 @@ module TreasuresHelper
 	def letters
 		@letters ||= Treasure.letter_indices
 	end
+
+	def heart_link_css
+		if user_signed_in?
+			current_user.hearted?(@treasure) ? 'hearted' : nil
+		end
+	end
 end
