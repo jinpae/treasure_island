@@ -1,12 +1,22 @@
-<h3 class="name"><%= link_to treasure.name, treasure %></h3>
-
-<p class="ext-link-url"><%= treasure.url %></p>
-
-<div class="heart-wrapper">
-	<%= content_tag :p do %>
-		Heart <%= content_tag :span, treasure.get_likes.size, class: "heart-count" %>
+<div class="treasure-wrapper">
+	<div class="name-ext-link-wrapper">
+		<h3 class="name">
+			<%= link_to treasure.name, treasure %>
+			<span>
+				<%= link_to treasure.url, class: "ext-link-url", target: "_blank" do %>
+					<i class="fa fa-external-link"></i>
+				<% end %>
+			</span>
+		</h3>
+	</div>
+	
+	<p class="description"><%= treasure.description %></p>
+	
+	<%= content_tag :p, class: "heart-count" do %>
+			<i class="fa fa-heart"></i> <%= treasure.get_likes.size %>
+	<% end %>
+	
+	<%= content_tag :p, class: "tag-list" do %>
+		<i class="fa fa-tag"></i> <%= tag_link_to treasure %>
 	<% end %>
 </div>
-
-<p class="description"><%= treasure.description %></p>
-<p class="tag-list"><%= tag_link_to treasure %></p>

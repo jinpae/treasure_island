@@ -8,6 +8,7 @@
 main {
 	background: $primary;
 	padding: 2.5rem 0 3rem 0;
+	color: $brown;
 
 	.lead-wrapper {
 		text-align: center;
@@ -54,14 +55,15 @@ main {
 }
 
 #summary-section {
+	@extend %clearfix;
+
 	h2 {
 		font-size: 1.8rem;
 		letter-spacing: -1px;
-		font-weight: 300;
 	}
 
 	.col-1-2 {
 		margin: 3rem 0;
-		padding: 0 75px;
+		padding: 0 4.5rem;
 	}
 }

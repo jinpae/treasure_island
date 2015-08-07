@@ -21,6 +21,7 @@
 @import 'colors';
 @import 'tags';
 @import 'home';
+@import 'treasures';
 
 html {
 	height: 100vh;
@@ -91,6 +92,7 @@ header {
 	padding: 1rem 0;
 	text-transform: uppercase;
 	background: $primary;
+	color: $brown;
 
 	a {
 		text-decoration: none;
@@ -145,5 +147,6 @@ header {
 */
 .col-1-2 {
 	width: 50%;
-	display: inline-block;
+	//display: inline-block;
+	float: left;
 }

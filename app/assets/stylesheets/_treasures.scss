@@ -1,0 +1,52 @@
+@import 'colors';
+
+.name-ext-link-wrapper {
+	.name {
+		display: inline-block;
+		margin: 0;
+		
+		span {
+			margin-left: 7px;
+			font-size: 1rem;
+		}
+
+		a {
+			text-decoration: none;
+			@include transition(all .2s ease-in-out);
+
+			&:hover {
+				color: darken($primary, 20%);
+			}
+		}
+	}
+}
+
+.heart-count,
+.tag-list {
+	display: inline;
+	font-size: .8rem;
+	color: lighten($default-text, 25%);
+}
+
+.tag {
+	text-decoration: none;
+	@include transition(all .1s ease-in-out);
+
+	&:hover {
+		color: darken($primary, 20%);
+	}
+}
+
+.heart-count {
+	margin-right: 7px;
+}
+
+.treasure-wrapper {
+	padding: 1.4rem 0;
+	border-bottom: 1px solid #e6e6e6;
+}
+
+.description {
+	margin: .6rem 0;
+	font-size: 14px;
+}
