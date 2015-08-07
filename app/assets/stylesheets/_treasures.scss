@@ -15,7 +15,7 @@
 			@include transition(all .2s ease-in-out);
 
 			&:hover {
-				color: darken($primary, 20%);
+				color: darken($primary, 10%);
 			}
 		}
 	}
@@ -33,7 +33,7 @@
 	@include transition(all .1s ease-in-out);
 
 	&:hover {
-		color: darken($primary, 20%);
+		color: darken($primary, 10%);
 	}
 }
 
