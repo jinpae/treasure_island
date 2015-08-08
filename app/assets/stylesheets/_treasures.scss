@@ -4,6 +4,8 @@
 	.name {
 		display: inline-block;
 		margin: 0;
+		font-size: 1.5rem;
+		letter-spacing: -.06rem;
 		
 		span {
 			margin-left: 7px;
@@ -42,11 +44,64 @@
 }
 
 .treasure-wrapper {
-	padding: 1.4rem 0;
+	padding: 1.7rem 0;
 	border-bottom: 1px solid #e6e6e6;
 }
 
 .description {
 	margin: .6rem 0;
 	font-size: 14px;
+}
+
+#treasures-index-section {
+	.alphanumeric-pagination {
+		text-align: center;
+
+		ul {
+			list-style: none;
+			
+			li {
+				display: inline-block;
+				margin: 0 .2rem;
+
+				a {
+					@include size(30px);
+					text-decoration: none;
+					background: $gray;
+					color: white;
+					line-height: 30px;
+					display: inline-block;
+					@include transition(all .1s ease-in-out);
+					border-radius: 50%;
+
+					&:hover {
+						background: $primary;
+						color: $brown;
+					}
+				}
+			}
+		}
+	}
+
+	.treasure-wrapper {
+		position: relative;
+		
+		.name {
+			font-size: 1.7rem;
+		}
+
+		.description {
+			font-size: 1rem;
+		}
+
+		.heart-count {
+			position: absolute;
+			font-size: 2rem;
+			margin: 0;
+			top: 50%;
+			right: 0;
+			@include transform(translateY(-50%));
+			font-weight: 300;
+		}
+	}
 }

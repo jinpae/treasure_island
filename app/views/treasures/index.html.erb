@@ -1,17 +1,19 @@
-<%= search_result_title %>
+<section id="treasures-index-section">
+	<div class="container">
+		<div class="alphanumeric-pagination">
+			<ul>
+				<% letters.each do |letter| %>
+					<%= content_tag :li do %>
+						<%= link_to letter, treasures_path(letter: letter) %>
+					<% end %>
+				<% end %>
+			</ul>
+		</div>
+		
+		<%= search_result_title %>
 
-<div class="alphanumeric-pagination">
-	<ul>
-		<% letters.each do |letter| %>
-			<%= content_tag :li do %>
-				<%= link_to letter, treasures_path(letter: letter) %>
-			<% end %>
-		<% end %>
-	</ul>
-</div>
-
-<%= render "shared/search_form", q: @q %>
-
-<%= render @treasures %>
-
-<%= will_paginate @treasures, inner_window: 2, outer_window: 1 %>
+		<%= render @treasures %>
+		
+		<%= will_paginate @treasures, inner_window: 2, outer_window: 1 %>
+	</div>
+</section>

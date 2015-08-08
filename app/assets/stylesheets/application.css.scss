@@ -42,6 +42,16 @@ a {
 	color: inherit;
 }
 
+section {
+	margin: 3rem 0 6rem 0;
+}
+
+.page-title {
+	font-size: 3rem;
+	letter-spacing: -2px;
+	margin-top: 0;
+}
+
 ::selection {
 	background: #CCF9CD;
 }
@@ -141,6 +151,25 @@ header {
 	.navbar-toggle {
 		float: right;
 		display: none;
+	}
+
+	.search-form {
+		float: right;
+		display: inline-block;
+		margin: 0 1em 0 3em;
+		line-height: 36px;
+		width: 250px;
+
+		input[type="search"] {
+			padding: .3rem .5rem;
+			border: inherit;
+			border-radius: 4px;
+			box-shadow: 0 0 0px 4px rgba(255, 255, 255, .2);
+			display: inline-block;
+			width: 100%;
+			box-sizing: inherit;
+			outline: inherit;
+		}
 	}
 }
 

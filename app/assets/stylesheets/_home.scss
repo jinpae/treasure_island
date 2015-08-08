@@ -61,14 +61,18 @@ main {
 		max-width: 940px;
 
 		h2 {
-			font-size: 1.8rem;
-			letter-spacing: -1px;
+			//font-size: 1.8rem;
+			//letter-spacing: -1px;
+			font-size: 1.4rem;
+			letter-spacing: .2rem;
+			text-transform: uppercase;
+			text-decoration: underline;
+			font-weight: 400;
 		}
 
 		.recent-col,
 		.popular-col {
 			float: left;
-			margin: 3rem 0 5rem 0;
 		}
 
 		.recent-col {

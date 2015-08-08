@@ -4,12 +4,6 @@ class TreasuresController < ApplicationController
 
 	# TODO: Need to clean this a bit...
 	def index
-		if params[:q]
-			@q = Treasure.search(params[:q].try(:merge, m: 'or').merge(tags_name_cont: params[:q].values[0]))
-		else
-			@q = Treasure.search(params[:q])
-		end
-
 		if params[:tag]
 			@treasures = Treasure.tagged_with(params[:tag]).order(:name).paginate(page: params[:page])
 		elsif params[:letter]

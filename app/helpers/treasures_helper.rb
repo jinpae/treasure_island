@@ -15,7 +15,7 @@ module TreasuresHelper
 		if tag || (search_keyword && search_keyword.values[0].present?)
 			title = "Displaying results for #{content_tag :span, (tag || search_keyword.values[0])}".html_safe
 		else
-			title = "Listing #{pluralize Treasure.treasure_count, "treasure"}"
+			title = "Treasures"
 		end
 
 		content_tag :h1, title, class: "page-title"
