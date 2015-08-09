@@ -1,16 +1,37 @@
-<h1><%= @treasure.name %></h1>
+<section id="treasure-show-section">
+	<div class="container">
+		<h1 class="page-title"><%= @treasure.name %></h1>
+		
+		<p class="owner">
+			<i class="fa fa-user"></i>
+			Submitted by <%= link_to @treasure.user.full_name, @treasure.user %>
+		</p>
 
-<p class="url"><%= link_to @treasure.url, @treasure.url, target: "_blank" %></p>
-<p class="owner">Submitted by <%= link_to @treasure.user.full_name, @treasure.user %></p>
-<p class="submitted-date"><%= local_time(@treasure.created_at, "%B %e, %Y") %></p>
-<p class="btn-edit"><%= link_to "Edit", edit_treasure_path(@treasure) %></p>
-<p class="btn-delete"><%= link_to "Delete", @treasure, method: :delete, data: { confirm: "Are you sure?" } %></p>
+		<p class="submitted-date">
+			<i class="fa fa-clock-o"></i>
+			<%= local_time(@treasure.created_at, "%B %e, %Y") %>
+		</p>
 
-<p class="description"><%= @treasure.description %></p>
-<p class="tag-list"><%= tag_link_to @treasure %></p>
+		<p class="url">
+			<i class="fa fa-external-link-square"></i>
+			<%= link_to @treasure.url, target: "_blank" do %>
+				<%= @treasure.url %>
+			<% end %>
+		</p>
 
-<div class="heart-wrapper">
-	<%= render 'heart_link', treasure: @treasure, css_class: heart_link_css %>
-</div>
+		<p class="btn-edit"><%= link_to "Edit", edit_treasure_path(@treasure) %></p>
+		<p class="btn-delete"><%= link_to "Delete", @treasure, method: :delete, data: { confirm: "Are you sure?" } %></p>
+		
+		<h2 class="subtitle">Description</h2>
+		<p class="description"><%= @treasure.description %></p>
 
-<%= link_to "&larr; Back to the list".html_safe, treasures_path %>
+		<h2 class="subtitle">Tags</h2>
+		<p class="tag-list"><%= tag_link_to @treasure %></p>
+		
+		<div class="heart-wrapper">
+			<%= render 'heart_link', treasure: @treasure, css_class: heart_link_css %>
+		</div>
+		
+		<%= link_to "&larr; Back to the list".html_safe, treasures_path %>
+	</div>
+</section>
