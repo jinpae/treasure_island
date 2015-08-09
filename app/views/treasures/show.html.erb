@@ -1,37 +1,54 @@
 <section id="treasure-show-section">
 	<div class="container">
-		<h1 class="page-title"><%= @treasure.name %></h1>
-		
-		<p class="owner">
-			<i class="fa fa-user"></i>
-			Submitted by <%= link_to @treasure.user.full_name, @treasure.user %>
-		</p>
+		<div class="content-wrapper">
+			<h1 class="page-title">
+				<%= @treasure.name %>
+				<span>
+					<%= link_to edit_treasure_path(@treasure), class: "edit" do %>
+						<i class="fa fa-pencil"></i>
+					<% end %>
 
-		<p class="submitted-date">
-			<i class="fa fa-clock-o"></i>
-			<%= local_time(@treasure.created_at, "%B %e, %Y") %>
-		</p>
+					<%= link_to @treasure, method: :delete, data: { confirm: "Are you sure?" }, class: "delete" do %>
+						<i class="fa fa-trash"></i>
+					<% end %>
+				</span>
+			</h1>
+			
+			<div class="submission-info">
+				<p class="submitter">
+					<i class="fa fa-user"></i>
+					Submitted by <%= link_to @treasure.user.full_name, @treasure.user %>
+				</p>
+				<p class="submission-date">
+					<i class="fa fa-clock-o"></i>
+					<%= local_time(@treasure.created_at, "%B %e, %Y") %>
+				</p>
+			</div>
 
-		<p class="url">
-			<i class="fa fa-external-link-square"></i>
-			<%= link_to @treasure.url, target: "_blank" do %>
-				<%= @treasure.url %>
-			<% end %>
-		</p>
+			<div class="sub-section">
+				<h2 class="subtitle">Description</h2>
+				<p><%= @treasure.description %></p>
+			</div>
 
-		<p class="btn-edit"><%= link_to "Edit", edit_treasure_path(@treasure) %></p>
-		<p class="btn-delete"><%= link_to "Delete", @treasure, method: :delete, data: { confirm: "Are you sure?" } %></p>
-		
-		<h2 class="subtitle">Description</h2>
-		<p class="description"><%= @treasure.description %></p>
+			<div class="sub-section">
+				<h2 class="subtitle">Site Link</h2>
+				<p>
+					<%= link_to @treasure.url, target: "_blank" do %>
+						<%= @treasure.url %>
+					<% end %>
+				</p>
+			</div>
 
-		<h2 class="subtitle">Tags</h2>
-		<p class="tag-list"><%= tag_link_to @treasure %></p>
-		
-		<div class="heart-wrapper">
-			<%= render 'heart_link', treasure: @treasure, css_class: heart_link_css %>
+			
+			<div class="tag-list">
+				<p><i class="fa fa-tag"></i> <%= tag_link_to @treasure %></p>
+			</div>
+			
+			<div class="heart-wrapper">
+				<%= render 'heart_link', treasure: @treasure, css_class: heart_link_css %>
+			</div>
+			
+			<%= link_to "&larr; Back to the list".html_safe, treasures_path, class: "back-to-list-link" %>
 		</div>
-		
-		<%= link_to "&larr; Back to the list".html_safe, treasures_path %>
 	</div>
 </section>

@@ -105,3 +105,118 @@
 		}
 	}
 }
+
+#treasure-show-section {
+	a {
+		@include transition(all .2s ease-in-out);
+		text-decoration: none;
+	}
+
+	.page-title {
+		margin-bottom: .5rem;
+
+		span {
+			font-size: 1rem;
+			margin-left: 10px;
+
+			a {
+				margin-left: 7px;
+			}
+
+			.edit {
+				&:hover {
+					color: darken($primary, 10%);
+				}
+			}
+
+			.delete {
+				&:hover {
+					color: $orange;
+				}
+			}
+		}
+	}
+	
+	.submission-info {
+		margin-bottom: 3rem;
+		font-size: 14px;
+
+		.submitter {
+			margin-right: 7px;
+
+			a {
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+
+		p {
+			display: inline;
+			color: $light-gray;
+		}
+	}
+
+	.content-wrapper {
+		position: relative;
+	}
+
+	.tag-list {
+		font-size: 1rem;
+		color: $default-text;
+		display: block;
+	}
+
+	.subtitle {
+		text-transform: uppercase;
+		letter-spacing: -.05em;
+		font-size: 1.3rem;
+		color: $light-gray;
+	}
+	
+	.sub-section {
+		margin-bottom: 3rem;
+
+		a:hover {
+			text-decoration: underline;
+		}
+	}
+
+	.heart-wrapper {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		font-size: 2.4rem;
+
+		a {
+			&:hover {
+				color: lighten($default-text, 10%);
+			}
+		}
+
+		a.hearted {
+			color: $orange;
+
+			&:hover {
+				color: darken($orange, 10%);
+			}
+		}
+
+		.heart-count {
+			display: inline-block;
+			font-size: inherit;
+			font-weight: 300;
+			color: $default-text;
+			margin-right: 0;
+		}
+	}
+
+	.back-to-list-link {
+		font-size: 14px;
+		color: $light-gray;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
