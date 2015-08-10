@@ -30,4 +30,9 @@ module TreasuresHelper
 			current_user.hearted?(@treasure) ? 'hearted' : nil
 		end
 	end
+
+	def truncate_description(description, options={})
+		(current_page? root_path) ?
+			truncate(description, options) : description
+	end
 end
