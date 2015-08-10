@@ -10,7 +10,7 @@
 		</h3>
 	</div>
 	
-	<p class="description"><%= treasure.description %></p>
+	<p class="description"><%= truncate treasure.description, length: 160, separator: ' ' %></p>
 	
 	<%= content_tag :p, class: "heart-count" do %>
 			<i class="fa fa-heart"></i> <%= treasure.get_likes.size %>
