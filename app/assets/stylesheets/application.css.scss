@@ -268,13 +268,14 @@ footer {
 .btn {
 	padding: 1rem;
 	display: inline-block;
-	background: $primary;
+	background: $gray;
 	color: white;
 	text-decoration: none;
 	border-radius: 3px;
 	font-size: 14px;
 
 	&:hover {
-		background: darken($primary, 10%);
+		background: $primary;
+		color: $brown;
 	}
 }
