@@ -14,7 +14,6 @@
 
 		a {
 			text-decoration: none;
-			@include transition(all .2s ease-in-out);
 
 			&:hover {
 				color: darken($primary, 10%);
@@ -109,7 +108,6 @@
 
 #treasure-show-section {
 	a {
-		@include transition(all .2s ease-in-out);
 		text-decoration: none;
 	}
 

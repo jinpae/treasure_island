@@ -3,15 +3,7 @@
 		<div class="content-wrapper">
 			<h1 class="page-title">
 				<%= @treasure.name %>
-				<span>
-					<%= link_to edit_treasure_path(@treasure), class: "edit" do %>
-						<i class="fa fa-pencil"></i>
-					<% end %>
-
-					<%= link_to @treasure, method: :delete, data: { confirm: "Are you sure?" }, class: "delete" do %>
-						<i class="fa fa-trash"></i>
-					<% end %>
-				</span>
+				<%= link_to_actions(@treasure) %>
 			</h1>
 			
 			<div class="submission-info">

@@ -19,10 +19,11 @@
 	<div class="container">
 		<div class="col-wrapper">
 			<div class="col-1-2 recent-col">
-				<h2 class="text-center">Recently discovered</h2>
+				<h2 class="text-center">Recent treasures</h2>
 
 				<div class="recent-treasures-wrapper">
 					<%= render @recent_treasures %>
+					<%= link_to "See more recent treasures", recent_treasures_path, class: "see-more-btn btn" %>
 				</div>
 			</div><!--
 			--><div class="col-1-2 popular-col">
@@ -30,6 +31,7 @@
 
 				<div class="popular-treasures-wrapper">
 					<%= render @popular_treasures %>
+					<%= link_to "See more popular treasures", popular_treasures_path, class: "see-more-btn btn" %>
 				</div>
 			</div>
 		</div>

@@ -39,6 +39,7 @@ body {
 }
 
 a {
+	@include transition(all .2s ease-in-out);
 	color: inherit;
 }
 
@@ -257,4 +258,23 @@ footer {
 
 .col-1-3 {
 	width: 33.3%
+}
+
+/*
+  ========================================
+	BUTTONS
+  ========================================
+*/
+.btn {
+	padding: 1rem;
+	display: inline-block;
+	background: $primary;
+	color: white;
+	text-decoration: none;
+	border-radius: 3px;
+	font-size: 14px;
+
+	&:hover {
+		background: darken($primary, 10%);
+	}
 }

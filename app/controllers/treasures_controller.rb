@@ -1,8 +1,8 @@
 class TreasuresController < ApplicationController
 	before_action :authenticate_user!, except: [:index, :show]
-	before_action :set_treasure, except: [:index, :new, :create, :autocomplete_tags]
+	before_action :require_correct_user, only: [:edit, :update, :destroy]
+	before_action :set_treasure, only: [:show, :heart]
 
-	# TODO: Need to clean this a bit...
 	def index
 		if params[:tag]
 			@treasures = Treasure.tagged_with(params[:tag]).order(:name).paginate(page: params[:page])
@@ -69,6 +69,16 @@ class TreasuresController < ApplicationController
 		end
 	end
 
+	def recent
+		@treasures = Treasure.recent(nil).paginate(page: params[:page])
+		render :index
+	end
+
+	def popular
+		@treasures = Treasure.popular(nil).paginate(page: params[:page])
+		render :index
+	end
+
 	private
 		def treasure_params
 			params.require(:treasure).permit(:name, :url, :description, :tag_list)
@@ -76,5 +86,10 @@ class TreasuresController < ApplicationController
 
 		def set_treasure
 			@treasure = Treasure.friendly.find(params[:id])
+		end
+
+		def require_correct_user
+			set_treasure
+			current_user? @treasure.user
 		end
 end
