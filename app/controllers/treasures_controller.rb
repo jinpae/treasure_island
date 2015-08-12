@@ -23,6 +23,7 @@ class TreasuresController < ApplicationController
 		if @treasure.save
 			redirect_to @treasure, notice: "New treasure submitted successfully."
 		else
+			set_tag_data
 			render :new
 		end
 	end
@@ -34,12 +35,14 @@ class TreasuresController < ApplicationController
 	end
 
 	def edit
+		set_tag_data
 	end
 
 	def update
 		if @treasure.update(treasure_params)
 			redirect_to @treasure, notice: "Treasure updated successfully."
 		else
+			set_tag_data
 			render :edit
 		end
 	end
@@ -91,5 +94,19 @@ class TreasuresController < ApplicationController
 		def require_correct_user
 			set_treasure
 			current_user? @treasure.user
+		end
+
+		# Creates a tag list data that Select2 expects by preserving
+		# all the tags the user had already typed in before submitting
+		# the new/edit form.
+		def set_tag_data
+			tmp_tag_list = []
+
+			@treasure.tag_list.each do |tag_name|
+				tag_obj = ActsAsTaggableOn::Tag.find_or_initialize_by(name: tag_name) 
+				tmp_tag_list << tag_obj
+			end
+
+			@tag_data = tmp_tag_list.map { |t| { id: t.name, name: t.name } }.to_json
 		end
 end

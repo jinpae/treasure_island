@@ -13,7 +13,7 @@ class Treasure < ActiveRecord::Base
 
 	friendly_id :name, use: [:slugged, :history]
 
-	self.per_page = 20
+	self.per_page = 2
 
 	scope :by_letter, ->(letter) { where("treasures.name like ?", "#{letter}%") }
 	scope :letter_indices, -> { find_by_sql("SELECT DISTINCT SUBSTR(name, 1, 1) AS name FROM treasures ORDER BY name") }
