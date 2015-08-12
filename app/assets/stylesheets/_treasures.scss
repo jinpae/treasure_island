@@ -66,7 +66,7 @@
 				a {
 					@include size(30px);
 					text-decoration: none;
-					background: $gray;
+					background: $dark-gray;
 					color: white;
 					line-height: 30px;
 					display: inline-block;
@@ -109,6 +109,11 @@
 #treasure-show-section {
 	a {
 		text-decoration: none;
+
+		&:hover {
+			//color: darken($primary, 10%);
+			text-decoration: underline;
+		}
 	}
 
 	.page-title {
@@ -142,17 +147,11 @@
 
 		.submitter {
 			margin-right: 7px;
-
-			a {
-				&:hover {
-					text-decoration: underline;
-				}
-			}
 		}
 
 		p {
 			display: inline;
-			color: $light-gray;
+			color: $gray;
 		}
 	}
 
@@ -165,21 +164,21 @@
 		font-size: 1rem;
 		color: $default-text;
 		display: block;
+
+		a:hover {
+			text-decoration: none;
+		}
 	}
 
 	.subtitle {
 		text-transform: uppercase;
 		letter-spacing: -.05em;
 		font-size: 1.3rem;
-		color: $light-gray;
+		color: $gray;
 	}
 	
 	.sub-section {
 		margin-bottom: 3rem;
-
-		a:hover {
-			text-decoration: underline;
-		}
 	}
 
 	.heart-wrapper {
@@ -189,8 +188,11 @@
 		font-size: 2.4rem;
 
 		a {
+			color: $gray;
+
 			&:hover {
-				color: lighten($default-text, 10%);
+				color: $primary;
+				//color: lighten($default-text, 10%);
 			}
 		}
 
@@ -213,10 +215,6 @@
 
 	.back-to-list-link {
 		font-size: 14px;
-		color: $light-gray;
-
-		&:hover {
-			text-decoration: underline;
-		}
+		color: $gray;
 	}
 }

@@ -6,6 +6,7 @@
   ========================================
 */
 main {
+	@include flex(none);
 	background: $primary;
 	padding: 2.5rem 0 3rem 0;
 	color: $brown;

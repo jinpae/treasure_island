@@ -19,14 +19,15 @@
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 @import 'colors';
+@import 'forms';
 @import 'tags';
 @import 'home';
 @import 'treasures';
 
 html {
+	box-sizing: border-box;
 	height: 100vh;
 	height: 100%;
-	box-sizing: border-box;
 }
 
 * {
@@ -36,6 +37,10 @@ html {
 body {
 	font-family: 'Open Sans', $helvetica;
 	color: $default-text;
+	@include display(flex);
+	@include flex-direction(column);
+	height: 100vh;
+	height: 100%;
 }
 
 a {
@@ -45,12 +50,14 @@ a {
 
 section {
 	margin: 3rem 0 6rem 0;
+	@include flex(1 0 auto);
 }
 
 .page-title {
 	font-size: 3rem;
 	letter-spacing: -2px;
 	margin-top: 0;
+	font-weight: 300;
 }
 
 ::selection {
@@ -103,6 +110,7 @@ section {
   ========================================
 */
 header {
+	@include flex(none);
 	@extend %clearfix;
 	padding: 1rem 0;
 	text-transform: uppercase;
@@ -196,9 +204,10 @@ header {
   ========================================
 */
 footer {
+	@include flex(none);
 	background: $dark-brown;
-	color: $gray;
-  box-shadow: inset 0 1px 0 0 $gray;
+	color: $dark-gray;
+  box-shadow: inset 0 1px 0 0 $dark-gray;
   border-top: 6px solid $dark-brown;
 
 	.container {
@@ -282,9 +291,9 @@ footer {
   ========================================
 */
 .btn {
-	padding: 1rem;
+	padding: .7rem 1rem;
 	display: inline-block;
-	background: $gray;
+	background: $dark-gray;
 	color: white;
 	text-decoration: none;
 	border-radius: 3px;
