@@ -1,3 +1,142 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.user-nav {
+	text-align :center;
+
+	a {
+		color: $gray;
+		margin: 0 .6rem;
+		display: inline-block;
+		text-decoration: none;
+		text-transform: uppercase;
+		font-size: 14px;
+		letter-spacing: -.02em;
+		
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+.user-info-wrapper {
+	@extend %clearfix;
+	position: relative;
+	padding: 4rem 3rem;
+	margin-bottom: 3rem;
+
+	.gravatar,
+	.user-info {
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	.gravatar {
+		img {
+			border-radius: 50%;
+		}
+	}
+
+	.user-info {
+		margin-left: 4rem;
+
+		h2 {
+			margin: 0;
+			font-size: 2.5rem;
+		}
+	}
+
+	.count-wrapper {
+		text-align: center;
+		position: absolute;
+		@include transform(translateY(-50%));
+		right: 0;
+		top: 50%;
+		float: right;
+		padding-right: 3rem;
+		
+		p {
+			text-transform: uppercase;
+			font-weight: 700;
+			letter-spacing: -.03em;
+			margin: 0;
+		}
+
+		.treasure-count {
+			font-size: 4rem;
+			font-weight: 300;
+		}
+	}
+}
+
+.tag-cloud {
+	padding: 3rem;
+	margin-bottom: 3rem;
+	border-top: 1px solid #e6e6e6;
+	border-bottom: 1px solid #e6e6e6;
+	text-align: center;
+	
+	a {
+		text-decoration: none;
+		margin: .2rem;
+		display: inline-block;
+		vertical-align: middle;
+		line-height: 1;
+		letter-spacing: -.1rem;
+	}
+
+	.xs {
+		font-size: .9rem;
+		letter-spacing: -.05rem;
+		color: #839C2B;
+
+		&:hover {
+			background-color: #839C2B;
+			color: white;
+		}
+	}
+
+	.s {
+		font-size: 1.25rem;
+
+		&:hover {
+			background-color: $default-text;
+			color: white;
+		}
+	}
+
+	.m {
+		font-size: 1.8rem;
+		color: #65BE9F;
+
+		&:hover {
+			background-color: #65BE9F;
+			color: white;
+		}
+	}
+
+	.l {
+		font-size: 2.6rem;
+		color: #F0C952;
+		letter-spacing: -3px;
+		font-weight: 700;
+
+		&:hover {
+			background: #F0C952;
+			color: white;
+		}
+	}
+
+	.xl {
+		font-size: 4rem;
+		font-weight: 700;
+		color: #E0335D;
+		letter-spacing: -4px;
+
+		&:hover {
+			background: #E0335D;
+			color: white;
+		}
+	}
+}

@@ -1,0 +1,13 @@
+<% if current_user? @user %>
+	<div class="user-nav">
+		<%= link_to user_path do %>
+			<i class="fa fa-diamond"></i> My Treasures
+		<% end %>
+		<%= link_to hearted_user_path do %>
+			<i class="fa fa-heart-o"></i> Hearted Treasures
+		<% end %>
+		<%= link_to edit_user_registration_path do %>
+			<i class="fa fa-pencil"></i> Edit Profile
+		<% end %>
+	</div>
+<% end %>

@@ -1,29 +1,18 @@
-<div class="gravatar">
-	<%= profile_image_for @user %>
-</div>
-
-<div class="user-info">
-	<h2>
-		<%= @user.full_name %>
-	</h2>
-	<p>
-		<%= @user.email %>
-	</p>
-</div>
-
-<div class="count-wrapper">
-	<p>Total Treasures</p>
-	<p class="treasures-count"><%= @user.treasures.count %></p>
-</div>
-
-<div class="tag-cloud">
-	<% tag_cloud @user.tags_with_user_tag_counts, %w(xs s m l xl) do |tag, css_class| %>
-		<%= link_to tag.name, tag_path(tag.name), class: css_class %>
-	<% end %>
-</div>
-
-<h2 class="title">Submitted treasures</h2>
-
-<%= submitted_treasures_for @user %>
-
-<%= will_paginate @owned_treasures %>
+<section>
+	<div class="container">
+		<%= render 'user_nav' %>
+		<%= render 'user_info' %>
+		
+		<div class="tag-cloud">
+			<% tag_cloud @user.tags_with_user_tag_counts, %w(xs s m l xl) do |tag, css_class| %>
+				<%= link_to tag.name, tag_path(tag.name), class: css_class %>
+			<% end %>
+		</div>
+		
+		<h2 class="page-title">Submitted treasures</h2>
+		
+		<%= submitted_treasures_for @user %>
+		
+		<%= will_paginate @owned_treasures %>
+	</div>
+</section>
