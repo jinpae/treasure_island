@@ -1,7 +1,12 @@
-<section>
+<section id="edit-profile-section">
 	<div class="container">
 		<div class="form-wrapper">
 			<h2 class="page-title">Edit My Profile</h2>
+
+			<div class="gravatar">
+				<%= profile_image_for current_user %>
+				<p>Avatar managed by <%= link_to "Gravatar", "https://gravatar.com", target: "_blank" %></p>
+			</div>
 			
 			<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
 			  <%= devise_error_messages! %>

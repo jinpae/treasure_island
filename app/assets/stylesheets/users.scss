@@ -20,25 +20,25 @@
 	}
 }
 
+.gravatar {
+	display: inline-block;
+	vertical-align: middle;
+
+	img {
+		border-radius: 50%;
+		vertical-align: middle;
+	}
+}
+
 .user-info-wrapper {
 	@extend %clearfix;
 	position: relative;
 	padding: 4rem 3rem;
 	margin-bottom: 3rem;
 
-	.gravatar,
 	.user-info {
 		display: inline-block;
 		vertical-align: middle;
-	}
-
-	.gravatar {
-		img {
-			border-radius: 50%;
-		}
-	}
-
-	.user-info {
 		margin-left: 4rem;
 
 		h2 {
@@ -137,6 +137,29 @@
 		&:hover {
 			background: #E0335D;
 			color: white;
+		}
+	}
+}
+
+#edit-profile-section {
+	.gravatar {
+		margin-bottom: 2rem;
+
+		img {
+			padding: 5px;
+			border: 1px solid lighten($light_gray, 5%);
+			border-radius: 0;
+		}
+
+		p {
+			display: inline-block;
+			vertical-align: middle;
+			margin-left: 20px;
+			color: $gray;
+
+			a {
+				font-weight: 700;
+			}
 		}
 	}
 }

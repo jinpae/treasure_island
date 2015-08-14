@@ -1,7 +1,7 @@
 module UsersHelper
 	include ActsAsTaggableOn::TagsHelper
 
-	def profile_image_for(user, size, *css_classes)
+	def profile_image_for(user, size=80, *css_classes)
 		url = "https://secure.gravatar.com/avatar/#{user.gravatar_id}?s=#{size}&d=mm"
 
 		image_tag url, alt: "User profile image", class: css_classes
