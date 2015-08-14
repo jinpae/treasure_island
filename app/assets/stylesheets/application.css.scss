@@ -305,3 +305,59 @@ footer {
 		color: $brown;
 	}
 }
+
+/*
+  ========================================
+	PAGINATION
+  ========================================
+*/
+.pagination {
+	text-align: center;
+	margin: 4rem 0 3rem 0;
+
+	a,
+	span,
+	.current {
+		padding: 3px 9px;
+	}
+
+	a,
+	.current {
+		width: 30px;
+		display: inline-block;
+		border: 1px solid $light-gray;
+		border-radius: 50%;
+
+		&:hover {
+			background: $primary;
+			color: $brown;
+		}
+	}
+
+	.current {
+		font-style: normal;
+		background: $primary;
+		cursor: not-allowed;
+		color: $brown;
+	}
+
+	a {
+		text-decoration: none;
+		color: $gray;
+
+		&.next_page,
+		&.previous_page {
+			width: initial;
+			border: none;
+			&:hover {
+				background: initial;
+				text-decoration: underline;
+			}
+		}
+	}
+
+	.disabled {
+		color: $light_gray;
+		cursor: not-allowed;
+	}
+}
