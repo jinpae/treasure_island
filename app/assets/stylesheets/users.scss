@@ -84,15 +84,16 @@
 		vertical-align: middle;
 		line-height: 1;
 		letter-spacing: -.1rem;
+		@include transition-duration(.1s);
 	}
 
 	.xs {
 		font-size: .9rem;
 		letter-spacing: -.05rem;
-		color: #839C2B;
+		color: $green;
 
 		&:hover {
-			background-color: #839C2B;
+			background-color: $green;
 			color: white;
 		}
 	}
@@ -108,22 +109,22 @@
 
 	.m {
 		font-size: 1.8rem;
-		color: #65BE9F;
+		color: $flat-green;
 
 		&:hover {
-			background-color: #65BE9F;
+			background-color: $flat-green;
 			color: white;
 		}
 	}
 
 	.l {
 		font-size: 2.6rem;
-		color: #F0C952;
+		color: $sunshine-yellow;
 		letter-spacing: -3px;
 		font-weight: 700;
 
 		&:hover {
-			background: #F0C952;
+			background: $sunshine-yellow;
 			color: white;
 		}
 	}
@@ -131,11 +132,11 @@
 	.xl {
 		font-size: 4rem;
 		font-weight: 700;
-		color: #E0335D;
+		color: $magenta;
 		letter-spacing: -4px;
 
 		&:hover {
-			background: #E0335D;
+			background: $magenta;
 			color: white;
 		}
 	}

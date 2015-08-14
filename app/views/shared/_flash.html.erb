@@ -1,5 +1,7 @@
 <% flash.each do |type, msg| %>
-	<%= content_tag :div, class: "alert alert-#{type}" do %>
-		<%= content_tag :p, msg %>
+	<%= content_tag :div, class: "#{type}", id: "flash-wrapper" do %>
+		<%= content_tag :p do %>
+			<%= msg %> <i class="fa fa-close close"></i>
+		<% end %>
 	<% end %>
 <% end %>

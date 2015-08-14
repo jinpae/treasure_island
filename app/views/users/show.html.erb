@@ -3,11 +3,13 @@
 		<%= render 'user_nav' %>
 		<%= render 'user_info' %>
 		
-		<div class="tag-cloud">
-			<% tag_cloud @user.tags_with_user_tag_counts, %w(xs s m l xl) do |tag, css_class| %>
-				<%= link_to tag.name, tag_path(tag.name), class: css_class %>
-			<% end %>
-		</div>
+		<% if @user.has_treasures? %>
+			<div class="tag-cloud">
+				<% tag_cloud @user.tags_with_user_tag_counts, %w(xs s m l xl) do |tag, css_class| %>
+					<%= link_to tag.name, tag_path(tag.name), class: css_class %>
+				<% end %>
+			</div>
+		<% end %>
 		
 		<h2 class="page-title">Submitted treasures</h2>
 		
