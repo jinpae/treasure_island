@@ -14,7 +14,9 @@ class ApplicationController < ActionController::Base
 
 		def set_q
 			if params[:q]
-				@q = Treasure.search(params[:q].try(:merge, m: 'or').merge(tags_name_cont: params[:q].values[0]))
+				# When searching through tags, replace whitespace with a hyphen
+				# as tags are parameterized.
+				@q = Treasure.search(params[:q].try(:merge, m: 'or').merge(tags_name_cont: params[:q].values[0].gsub(' ', '-')))
 			else
 				@q = Treasure.search(params[:q])
 			end
