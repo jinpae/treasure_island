@@ -78,6 +78,7 @@
 					display: inline-block;
 					@include transition(all .1s ease-in-out);
 					border-radius: 50%;
+					margin: 3px 0px;
 
 					&:hover {
 						background: $primary;

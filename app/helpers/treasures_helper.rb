@@ -50,7 +50,7 @@ module TreasuresHelper
 					content_tag :i, nil, class: "fa fa-pencil"
 				end
 
-				link += link_to treasure, method: :delete, data: { confirm: "Are you sure?" }, class: "delete" do
+				link += link_to treasure, method: :delete, data: { confirm: "Are you sure you want to delete this treasure? (You cannot undo this action)" }, class: "delete" do
 						content_tag :i, nil, class: "fa fa-trash"
 				end
 			end

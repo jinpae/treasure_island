@@ -16,12 +16,11 @@ class Treasure < ActiveRecord::Base
 	self.per_page = 20
 
 	scope :by_letter, ->(letter) { where("treasures.name like ?", "#{letter}%") }
-	scope :letter_indices, -> { find_by_sql("SELECT DISTINCT SUBSTR(name, 1, 1) AS name FROM treasures ORDER BY name") }
 	scope :recent, -> (n = 5) { order(created_at: :desc).limit(n) }
 	scope :popular, -> (n = 5) { order(cached_votes_up: :desc).limit(n) }
 
 	def self.letter_indices
-		@treasures_with_first_letter ||= find_by_sql("SELECT DISTINCT SUBSTR(name, 1, 1) AS name FROM treasures ORDER BY name")
+		@treasures_with_first_letter = find_by_sql("SELECT DISTINCT SUBSTR(name, 1, 1) AS name FROM treasures ORDER BY name")
 
 		# Return an array of unique first letters.
 		@treasures_with_first_letter.map(&:name)

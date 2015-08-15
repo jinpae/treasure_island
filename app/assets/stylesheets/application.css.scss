@@ -172,10 +172,26 @@ header {
 				font-weight: 400;
 				font-size: 15px;
 				letter-spacing: -.03em;
-				
+
 				a {
 					&:hover {
 						border-bottom: 4px solid $brown;
+					}
+				}
+
+				a.btn-new-treasure {
+					border-radius: 3px;
+					padding: 7px 14px;
+					background: $dark-gray;
+					color: white;
+					font-size: 13px;
+					letter-spacing: 1px;
+					vertical-align: top;
+					border: 1px solid darken($dark-gray, 10%);
+
+					&:hover {
+						background: darken($dark-gray, 10%);
+						color: white;
 					}
 				}
 			}
@@ -198,7 +214,7 @@ header {
 		margin-right: 1rem;
 
 		input[type="search"] {
-			padding: .3rem .5rem;
+			padding: .3rem 2rem .3rem .5rem;
 			border: inherit;
 			border-radius: 4px;
 			box-shadow: 0 0 0px 4px rgba(255, 255, 255, .2);
@@ -206,6 +222,11 @@ header {
 			width: 100%;
 			box-sizing: inherit;
 			outline: inherit;
+		}
+		
+		.btn-search {
+			font-size: 1rem;
+			margin-right: 10px;
 		}
 	}
 
