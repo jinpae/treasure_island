@@ -109,6 +109,21 @@
 			@include transform(translateY(-50%));
 			font-weight: 300;
 		}
+
+		@media only screen and (max-width: 768px) {
+			.description {
+				width: 100%;
+				font-size: 15px;
+			}
+
+			.heart-count {
+				display: inline;
+				font-size: .8rem;
+				color: lighten($default-text, 25%);
+				position: static;
+				margin-right: 7px;
+			}
+		}
 	}
 }
 
@@ -127,7 +142,6 @@
 
 		span {
 			font-size: 1rem;
-			margin-left: 10px;
 
 			a {
 				margin-left: 10px;
@@ -216,6 +230,11 @@
 			font-weight: 300;
 			color: $default-text;
 			margin-right: 0;
+		}
+
+		@media only screen and (max-width: 991px) {
+			position: static;
+
 		}
 	}
 

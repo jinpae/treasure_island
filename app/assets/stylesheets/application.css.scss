@@ -49,6 +49,10 @@ a {
 	color: inherit;
 }
 
+p {
+	line-height: 1.5;
+}
+
 section {
 	margin: 4rem 0 7rem 0;
 	@include flex(1 0 auto);
