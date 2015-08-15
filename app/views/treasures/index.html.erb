@@ -1,3 +1,6 @@
+<% title = search_result_title %>
+<% page_title title.gsub(/<\/?span>/, '') %>
+
 <section id="treasures-index-section">
 	<div class="container">
 		<div class="alphanumeric-pagination">
@@ -10,7 +13,7 @@
 			</ul>
 		</div>
 		
-		<%= search_result_title %>
+		<h1 class="page-title"><%= title %></h1>
 
 		<%= render @treasures %>
 		

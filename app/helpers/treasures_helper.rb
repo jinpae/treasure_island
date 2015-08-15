@@ -25,7 +25,7 @@ module TreasuresHelper
 			end
 		end
 
-		content_tag :h1, title, class: "page-title"
+		title
 	end
 
 	def letters

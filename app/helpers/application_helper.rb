@@ -23,4 +23,8 @@ module ApplicationHelper
 			link_to link_text, link_path, class: css_classes
 		end
 	end
+
+	def page_title(title)
+		content_for :title, title.dup.titleize.concat(' | Treasure Island')
+	end
 end
