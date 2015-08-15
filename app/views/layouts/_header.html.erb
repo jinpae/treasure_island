@@ -6,12 +6,15 @@
 
 		<%= link_to "Treasure Island", root_path, class: "navbar-brand" %>
 
-		<%= link_to "#", class: "navbar-toggle" do %>
-			<%= content_tag :i, nil, class: "fa fa-bars" %>
-		<% end %>
+		<div class="navbar-toggle">
+			<%= link_to "#" do %>
+				<i class="fa fa-bars"></i>
+			<% end %>
+		</div>
 
 		<nav>
 			<ul>
+				<li><%= nav_search_field %></li>
 				<% if user_signed_in? %>
 					<li><%= link_to "New Treasure", new_treasure_path %></li>
 					<li><%= link_to "Treasures", treasures_path %></li>
@@ -24,7 +27,5 @@
 				<% end %>
 			</ul>
 		</nav>
-
-		<%= nav_search_field %>
 	</div>
 </header>
