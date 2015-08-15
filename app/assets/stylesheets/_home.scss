@@ -80,7 +80,25 @@ main {
 		}
 	}
 
-	.see-more-btn {
+	.btn-wrapper {
 		margin-top: 2rem;
+	}
+
+	@media only screen and (max-width: 734px) {
+		.col-wrapper {
+			.recent-col,
+			.popular-col {
+				padding: 0;
+				width: 100%;
+			}
+
+			.recent-col {
+				margin-bottom: 3rem;
+			}
+		}
+
+		.btn-wrapper {
+			text-align: center;
+		}
 	}
 }

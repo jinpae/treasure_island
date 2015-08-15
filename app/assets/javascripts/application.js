@@ -15,4 +15,5 @@
 //= require select2
 //= require local_time
 //= require turbolinks
+//= require jquery.fittext.js
 //= require_tree .

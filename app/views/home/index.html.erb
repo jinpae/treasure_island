@@ -23,7 +23,10 @@
 
 				<div class="recent-treasures-wrapper">
 					<%= render @recent_treasures %>
-					<%= link_to "View more", recent_treasures_path, class: "see-more-btn btn" %>
+
+					<div class="btn-wrapper">
+						<%= link_to "View more", recent_treasures_path, class: "btn" %>
+						</div>
 				</div>
 			</div><!--
 			--><div class="col-1-2 popular-col">
@@ -31,7 +34,10 @@
 
 				<div class="popular-treasures-wrapper">
 					<%= render @popular_treasures %>
-					<%= link_to "View more", popular_treasures_path, class: "see-more-btn btn" %>
+
+					<div class="btn-wrapper">
+						<%= link_to "View more", popular_treasures_path, class: "btn" %>
+					</div>
 				</div>
 			</div>
 		</div>

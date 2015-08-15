@@ -10,18 +10,41 @@
 
 			<div class="other-links-wrapper">
 				<h2>Other</h2>
-				<ul>
+				<ul class="text-links">
 					<li>
-						<%= link_to "GitHub", "https://github.com/jinpae/treasure_island", target: "_blank", class: "other-link" %>
+						<%= footer_link_to "GitHub", UrlLinks::URLS[:github], class: "other-link" %>
 					</li>
 					<li>
-						<%= link_to "Twitter", "https://twitter.com/jinpae", target: "_blank", class: "other-link" %>
+						<%= footer_link_to "Twitter", UrlLinks::URLS[:twitter], class: "other-link" %>
 					</li>
 					<li>
-						<%= link_to "LinkedIn", "https://linkedin.com/in/jinpae", target: "_blank", class: "other-link" %>
+						<%= footer_link_to "LinkedIn", UrlLinks::URLS[:linkedin], class: "other-link" %>
 					</li>
 					<li>
 						<%= mail_to "support@jinpae.com", "Support", class: "other-link" %>
+					</li>
+				</ul>
+
+				<ul class="icon-font-links">
+					<li>
+						<%= footer_link_to UrlLinks::URLS[:github], class: "other-link" do %>
+							<i class="fa fa-github"></i>
+						<% end %>
+					</li>
+					<li>
+						<%= footer_link_to UrlLinks::URLS[:twitter], class: "other-link" do %>
+							<i class="fa fa-twitter"></i>
+						<% end %>
+					</li>
+					<li>
+						<%= footer_link_to UrlLinks::URLS[:linkedin], class: "other-link" do %>
+							<i class="fa fa-linkedin"></i>
+						<% end %>
+					</li>
+					<li>
+						<%= mail_to "support@jinpae.com", class: "other-link" do %>
+							<i class="fa fa-envelope"></i>
+						<% end %>
 					</li>
 				</ul>
 			</div>
