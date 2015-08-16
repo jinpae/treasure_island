@@ -10,9 +10,9 @@
 		</h3>
 	</div>
 	
-	<p class="description">
-		<%= truncate_description markdown(treasure.description), length: 160, separator: ' ' %>
-	</p>
+	<div class="description">
+		<%= markdown(truncate_description(treasure.description, length: 160, separator: ' ')) %>
+	</div>
 	
 	<%= content_tag :p, class: "heart-count" do %>
 			<i class="fa fa-heart"></i> <%= treasure.get_likes.size %>
