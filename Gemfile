@@ -66,3 +66,9 @@ gem 'local_time'
 gem 'friendly_id'
 gem 'bourbon'
 gem 'font-awesome-sass'
+
+# HTML::Pipeline filter dependencies
+gem 'html-pipeline'
+gem 'github-markdown'
+gem 'gemoji'
+gem 'sanitize'

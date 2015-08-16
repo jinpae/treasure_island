@@ -200,6 +200,14 @@
 	
 	.sub-section {
 		margin-bottom: 3rem;
+
+		&.markdown a {
+			text-decoration: underline;
+
+			&:hover {
+				color: black;
+			}
+		}
 	}
 
 	.heart-wrapper {

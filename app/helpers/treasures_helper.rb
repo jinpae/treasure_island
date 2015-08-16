@@ -56,4 +56,20 @@ module TreasuresHelper
 			end
 		end
 	end
+
+	def markdown(content)
+		context = {
+			gfm: true,
+			asset_root: 'https://a248.e.akamai.net/assets.github.com/images/icons'
+		}
+
+		pipeline = HTML::Pipeline.new [
+			HTML::Pipeline::MarkdownFilter,
+			HTML::Pipeline::SanitizationFilter,
+			HTML::Pipeline::EmojiFilter
+		], context
+
+		result = pipeline.call(content)
+		result[:output].to_s.html_safe
+	end
 end

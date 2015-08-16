@@ -12,7 +12,10 @@
 	</div>
 
 	<div class="field">
-		<%= f.label :description %><br>
+		<%= f.label :description do %>
+			Description <em>(<%= link_to 'Parsed with Markdown', 'https://guides.github.com/features/mastering-markdown/', target: '_blank', class: 'float-right text-muted markdown-link' %>)</em>
+		<% end %>
+		<br>
 		<%= f.text_area :description, rows: 8 %>
 	</div>
 

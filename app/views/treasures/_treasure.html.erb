@@ -11,7 +11,7 @@
 	</div>
 	
 	<p class="description">
-		<%= truncate_description treasure.description, length: 160, separator: ' ' %>
+		<%= truncate_description markdown(treasure.description), length: 160, separator: ' ' %>
 	</p>
 	
 	<%= content_tag :p, class: "heart-count" do %>
