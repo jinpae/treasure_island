@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
 		collection do
 			get :autocomplete_tags
-			get :recent
+			get :latest
 			get :popular
 		end
 	end

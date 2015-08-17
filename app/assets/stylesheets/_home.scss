@@ -66,12 +66,12 @@ main {
 			font-weight: 300;
 		}
 
-		.recent-col,
+		.latest-col,
 		.popular-col {
 			float: left;
 		}
 
-		.recent-col {
+		.latest-col {
 			padding-right: 5rem;
 		}
 
@@ -86,13 +86,13 @@ main {
 
 	@media only screen and (max-width: 734px) {
 		.col-wrapper {
-			.recent-col,
+			.latest-col,
 			.popular-col {
 				padding: 0;
 				width: 100%;
 			}
 
-			.recent-col {
+			.latest-col {
 				margin-bottom: 3rem;
 			}
 		}

@@ -16,7 +16,7 @@ class Treasure < ActiveRecord::Base
 	self.per_page = 20
 
 	scope :by_letter, ->(letter) { where("treasures.name like ?", "#{letter}%") }
-	scope :recent, -> (n = 5) { order(created_at: :desc).limit(n) }
+	scope :latest, -> (n = 5) { order(created_at: :desc).limit(n) }
 	scope :popular, -> (n = 5) { order(cached_votes_up: :desc).limit(n) }
 
 	def self.letter_indices

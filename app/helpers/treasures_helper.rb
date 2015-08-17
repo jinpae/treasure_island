@@ -15,8 +15,8 @@ module TreasuresHelper
 		if tag || (search_keyword && search_keyword.values[0].present?)
 			title = "Displaying results for #{content_tag :span, (tag || search_keyword.values[0])}".html_safe
 		else
-			if current_page? recent_treasures_path
-				title = "Recent treasures"
+			if current_page? latest_treasures_path
+				title = "Latest treasures"
 			elsif
 				current_page? popular_treasures_path
 				title = "Popular treasures"

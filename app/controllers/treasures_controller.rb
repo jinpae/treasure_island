@@ -1,5 +1,5 @@
 class TreasuresController < ApplicationController
-	before_action :authenticate_user!, except: [:index, :show, :recent, :popular]
+	before_action :authenticate_user!, except: [:index, :show, :latest, :popular]
 	before_action :require_correct_user, only: [:edit, :update, :destroy]
 	before_action :set_treasure, only: [:show, :heart]
 
@@ -72,8 +72,8 @@ class TreasuresController < ApplicationController
 		end
 	end
 
-	def recent
-		@treasures = Treasure.recent(nil).paginate(page: params[:page])
+	def latest
+		@treasures = Treasure.latest(nil).paginate(page: params[:page])
 		render :index
 	end
 
