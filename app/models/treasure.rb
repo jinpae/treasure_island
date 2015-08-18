@@ -29,8 +29,4 @@ class Treasure < ActiveRecord::Base
 	def should_generate_new_friendly_id?
 		slug.blank? || name_changed?
 	end
-
-	def self.treasure_count
-		@count ||= Treasure.count
-	end
 end
