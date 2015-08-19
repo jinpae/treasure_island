@@ -25,7 +25,7 @@ module ApplicationHelper
 	end
 
 	def page_title(title)
-		content_for :title, title.dup.titleize.concat(' | Treasure Island')
+		content_for :title, title.dup.concat(' | Treasure Island')
 	end
 
 	def footer_link_to(link_text=nil, link_path=nil, options=nil, &block)
