@@ -25,6 +25,10 @@
 			data: { saved: @tag_data, url: autocomplete_tags_treasures_path }, class: "tag-select" %>
 	</div>
 
-	<%= f.submit "Submit", class: "btn btn-submit" %>
+	<% if @treasure.new_record? %>
+		<%= f.submit "Submit", class: "btn btn-submit" %>
+	<% else %>
+		<%= f.submit "Update", class: "btn btn-submit" %>
+	<% end %>
 	<%= link_to "Cancel", @treasure, class: "cancel-link" %>
 <% end %>
